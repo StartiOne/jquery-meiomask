@@ -742,7 +742,7 @@
 
             // adaptation from http://digitarald.de/project/autocompleter/
             __getRange: function(input) {
-                if (!$.browser.msie && !$.browser.android) return {
+                if (typeof input.selectionStart === "number" && typeof input.selectionEnd === "number") return {
                     start: input.selectionStart,
                     end: input.selectionEnd
                 };
